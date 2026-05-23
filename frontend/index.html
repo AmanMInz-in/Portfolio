@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Minz — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">AM<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Let's Talk
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-inner">
+      <!-- LEFT: Photo -->
+      <div class="hero-photo-col fade-in-left">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <img class="hero-photo" src="../assets/hero.jpg" alt="Aman Minz" />
+            <div class="photo-ring ring-1"></div>
+            <div class="photo-ring ring-2"></div>
+            <div class="photo-ring ring-3"></div>
+          </div>
+          <div class="photo-badge">
+            <span class="badge-dot"></span> Open to Work
+          </div>
+        </div>
+        <div class="hero-social">
+          <a href="https://linkedin.com/amanminz" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://github.com/AmanMInz-in" target="_blank" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+          <a href="https://instagram.com/amannminz" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5" ry="5"/><path d="M16 11.37a4 4 0 11-7.999.001A4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a href="mailto:amanminz.cs@gmail.com" class="social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Text -->
+      <div class="hero-text-col">
+        <div class="hero-tag fade-in-up delay-1">
+          <span class="tag-line"></span> BTech CSE AI/ML · Class of 2025+
+        </div>
+        <h1 class="hero-name fade-in-up delay-2">
+          Aman<br /><span class="name-outline">Minz</span>
+        </h1>
+        <div class="hero-title fade-in-up delay-3">
+          <span class="title-scroll" id="titleScroll">Full Stack Developer</span>
+        </div>
+        <p class="hero-tagline fade-in-up delay-4">
+          Architecting scalable web applications where elegant design meets robust engineering.
+          Passionate about AI-powered workflows and building platforms that solve real-world problems.
+        </p>
+        <div class="hero-cta-row fade-in-up delay-5">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+        <div class="hero-stats fade-in-up delay-6">
+          <div class="stat">
+            <span class="stat-num">300+</span>
+            <span class="stat-label">Teams Competed</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Hackathon Awards</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label reveal">About Me</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-heading">Building digital experiences<br /><em>that matter.</em></h2>
+          <p>I'm a passionate full-stack developer and BTech CSE (AI/ML) student at Christian College of Engineering and Technology, Bhilai. I specialize in crafting end-to-end web solutions — from pixel-perfect interfaces to robust backend architectures.</p>
+          <p>Whether it's winning hackathons or shipping real-world platforms, I bring precision, creativity, and an obsession with clean code to everything I build. My work lives at the intersection of thoughtful engineering and intuitive design.</p>
+          <div class="about-details">
+            <div class="detail-item">
+              <span class="detail-icon">📍</span>
+              <span>Bhilai, Chhattisgarh, India</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📧</span>
+              <a href="mailto:amanminz.cs@gmail.com">amanminz.cs@gmail.com</a>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📱</span>
+              <span>+91 8305399029</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-achievements reveal">
+          <div class="achievement-card">
+            <div class="ach-icon">🏆</div>
+            <div class="ach-content">
+              <h4>SYMPHONIA - Hackathon CCET Bhilai</h4>
+              <p>Secured <strong>1st Position</strong> building a centralized event management platform for colleges.</p>
+            </div>
+          </div>
+          <div class="achievement-card">
+            <div class="ach-icon">🚀</div>
+            <div class="ach-content">
+              <h4>HackOMania 2K25 - SSPU Bhilai </h4>
+              <p>Selected among <strong>top 300+ teams</strong> nationally as a 1st-year student with Team "Hack Titans".</p>
+            </div>
+          </div>
+          <div class="achievement-card">
+            <div class="ach-icon">🎓</div>
+            <div class="ach-content">
+              <h4>BTech CSE AI/ML </h4>
+              <p>Currently pursuing specialization in <strong>Artificial Intelligence & Machine Learning</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">Technical Stack</div>
+      <h2 class="section-heading reveal">Tools I wield<br /><em>with precision.</em></h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label reveal">Projects</div>
+      <h2 class="section-heading reveal">Things I've<br /><em>Build.</em></h2>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="projects-loading">
+          <div class="loading-spinner"></div>
+          <span>Loading projects...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label reveal">Contact</div>
+      <div class="contact-grid">
+        <div class="contact-text reveal">
+          <h2 class="section-heading">Let's build<br /><em>something great.</em></h2>
+          <p>Have a project in mind? Looking for a developer to join your team? Or just want to connect? My inbox is always open.</p>
+          <div class="contact-links">
+            <a href="mailto:amanminz.cs@gmail.com" class="contact-link">
+              <span class="cl-icon">✉</span>
+              amanminz.cs@gmail.com
+            </a>
+            <a href="https://linkedin.com/amanminz" target="_blank" class="contact-link">
+              <span class="cl-icon">in</span>
+              LinkedIn Profile
+            </a>
+            <a href="https://instagram.com/amannminz" target="_blank" class="contact-link">
+              <span class="cl-icon">ig</span>
+              Instagram Profile
+            </a>
+            <a href="https://github.com/AmanMInz-in" target="_blank" class="contact-link">
+              <span class="cl-icon">gh</span>
+              GitHub Profile
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email Address" required />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary full-width" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display:none">Sending...</span>
+          </button>
+          <div class="form-success" id="formSuccess" style="display:none">
+            <span>✓</span> Message sent! I'll get back to you soon.
+          </div>
+          <div class="form-error" id="formError" style="display:none">
+            Something went wrong. Please try again or email me directly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">AM<span class="accent">.</span></span>
+        <span class="footer-copy">© 2025 Aman Minz. Crafted with precision.</span>
+        <span class="footer-stack">React · Node · MongoDB</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
