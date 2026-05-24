@@ -769,12 +769,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .projects-grid {
   display: flex;
+  flex-direction: row;
   gap: 28px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 12px 0;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
+  align-items: stretch;
 }
 
 .projects-grid::-webkit-scrollbar {

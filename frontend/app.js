@@ -197,7 +197,7 @@ const staticProjects = [
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'JWT'],
     liveUrl: 'https://dnvba07nlq4dm.cloudfront.net/',
     githubUrl: 'https://github.com/AmanMInz-in/HackTitans-AchievR',
-    imageUrl: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'assets/achiver.png',
   },
   {
     id: 2,
@@ -206,7 +206,7 @@ const staticProjects = [
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'RBAC'],
     liveUrl: 'https://central-event-management-system.vercel.app/',
     githubUrl: 'https://github.com/AmanMInz-in/Central-Event-Management-System',
-    imageUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'assets/central 02.png',
   },
   {
     id: 3,
@@ -215,7 +215,7 @@ const staticProjects = [
     tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     liveUrl: 'https://amanminz-in.github.io/public-discussion-Forum/index.html',
     githubUrl: 'https://github.com/AmanMInz-in/public-discussion-Forum',
-    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'assets/Synclab 01.png',
   },
   {
     id: 4,
