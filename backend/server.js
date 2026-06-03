@@ -6,8 +6,9 @@
 
 require('dotenv').config();
 
-const express = require('express');
-const cors    = require('cors');
+const express   = require('express');
+const cors      = require('cors');
+const nodemailer = require('nodemailer');
 
 const app  = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +22,28 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+/* =====================================================
+   NODEMAILER SETUP
+   ===================================================== */
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
+// Verify transporter configuration
+transporter.verify((error, success) => {
+  if (error) {
+    console.warn('⚠️  Email service not configured properly:', error.message);
+  } else if (success) {
+    console.log('✅ Email service ready to send messages');
+  }
+});
 
 /* =====================================================
    DATA: Projects
@@ -108,10 +131,9 @@ app.get('/api/projects/:id', (req, res) => {
 /**
  * POST /api/contact
  * Accepts: { name, email, message }
- * Validates input and returns a success/error response.
- * (Extend with Nodemailer or a DB write as needed.)
+ * Validates input, sends email via Nodemailer, and returns response.
  */
-app.post('/api/contact', (req, res) => {
+app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   /* --- Validation --- */
@@ -124,17 +146,49 @@ app.post('/api/contact', (req, res) => {
     return res.status(400).json({ success: false, errors });
   }
 
-  /* --- Log submission (extend with DB / email service here) --- */
-  console.log('\n📬 New contact form submission:');
-  console.log(`  Name:    ${name.trim()}`);
-  console.log(`  Email:   ${email.trim()}`);
-  console.log(`  Message: ${message.trim().slice(0, 80)}${message.length > 80 ? '…' : ''}`);
-  console.log(`  Time:    ${new Date().toISOString()}\n`);
+  const nameTrimmed = name.trim();
+  const emailTrimmed = email.trim();
+  const messageTrimmed = message.trim();
 
-  res.status(200).json({
-    success: true,
-    message: `Thanks, ${name.trim()}! I'll get back to you at ${email.trim()} soon.`,
-  });
+  /* --- Log submission --- */
+  console.log('\n📬 New contact form submission:');
+  console.log(`  Name:    ${nameTrimmed}`);
+  console.log(`  Email:   ${emailTrimmed}`);
+  console.log(`  Message: ${messageTrimmed.slice(0, 80)}${messageTrimmed.length > 80 ? '…' : ''}`);
+  console.log(`  Time:    ${new Date().toISOString()}`);
+
+  /* --- Send email via Nodemailer --- */
+  try {
+    const mailOptions = {
+      from: process.env.SMTP_USER,
+      to: process.env.CONTACT_TO,
+      subject: `New Portfolio Message from ${nameTrimmed}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${nameTrimmed}</p>
+        <p><strong>Email:</strong> <a href="mailto:${emailTrimmed}">${emailTrimmed}</a></p>
+        <p><strong>Message:</strong></p>
+        <p>${messageTrimmed.replace(/\n/g, '<br>')}</p>
+        <hr>
+        <p><small>Received at ${new Date().toISOString()}</small></p>
+      `,
+      replyTo: emailTrimmed,
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log(`✅ Email sent successfully to ${process.env.CONTACT_TO}\n`);
+
+    res.status(200).json({
+      success: true,
+      message: `Thanks, ${nameTrimmed}! I've received your message and will get back to you soon.`,
+    });
+  } catch (error) {
+    console.error('❌ Error sending email:', error.message);
+    res.status(500).json({
+      success: false,
+      errors: ['Failed to send message. Please try again later.'],
+    });
+  }
 });
 
 /* =====================================================
