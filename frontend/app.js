@@ -7,7 +7,10 @@
 /* =====================================================
    CONFIG
    ===================================================== */
-const API_BASE = 'http://localhost:3001/api';
+// Note: Backend is currently NOT deployed. The website runs in fully static mode.
+// Once you deploy your backend (e.g. on Render or Railway), uncomment the line below 
+// and update it with your live backend domain:
+// const API_BASE = 'http://localhost:3001/api';
 
 /* =====================================================
    NAV: scroll + hamburger
@@ -234,16 +237,18 @@ async function loadProjects() {
 
   let projects = staticProjects;
 
+  /*
+  // NOTE: Backend is currently NOT deployed. Uncomment this block when you deploy your API.
   try {
     const res = await fetch(`${API_BASE}/projects`);
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length) projects = data;
     }
-  } catch {
-    // API unavailable — use static fallback
-    console.info('Backend not running; using static project data.');
+  } catch (err) {
+    console.info('Backend not running; using static fallback projects.', err);
   }
+  */
 
   grid.innerHTML = projects
     .map((p, i) => `
@@ -315,6 +320,8 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
     return;
   }
 
+  /*
+  // NOTE: Backend is currently NOT deployed. Uncomment this block when you deploy your API.
   try {
     const res = await fetch(`${API_BASE}/contact`, {
       method:  'POST',
@@ -325,14 +332,21 @@ contactForm && contactForm.addEventListener('submit', async (e) => {
     if (res.ok) {
       showFormFeedback('success');
       contactForm.reset();
+      return;
     } else {
       throw new Error('Server error');
     }
-  } catch {
-    // Show success UI anyway (demo mode — no backend)
+  } catch (err) {
+    console.warn('Failed to contact live backend:', err);
+    // You can handle error fallback here if desired
+  }
+  */
+
+  // Mock implementation for static demo (runs because live backend is not deployed)
+  setTimeout(() => {
     showFormFeedback('success');
     contactForm.reset();
-  }
+  }, 800);
 });
 
 function showFormFeedback(type) {
