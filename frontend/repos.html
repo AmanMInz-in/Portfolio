@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Minz — GitHub Repositories</title>
+  <meta name="description" content="Explore open-source repositories and development projects built by Aman Minz on GitHub." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://amanminz.vercel.app/repos.html" />
+  <link rel="icon" type="image/jpeg" href="assets/hero.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-logo">AM<span class="accent">.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html" class="nav-cta" style="display: inline-flex; align-items: center; justify-content: center;">
+        Back to Portfolio
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO/HEADER ============ -->
+  <section class="github-header-section" style="padding: 160px 0 60px; background: var(--bg-2); border-bottom: 1px solid var(--border);">
+    <div class="container" style="text-align: center;">
+      <span class="section-label" style="justify-content: center; margin-bottom: 16px;">Open Source</span>
+      <h1 class="section-heading" style="margin-bottom: 0; font-size: clamp(2.5rem, 5vw, 4rem);">My GitHub Repositories</h1>
+    </div>
+  </section>
+
+  <!-- ============ REPOS LIST ============ -->
+  <section class="github-section section" style="padding: 80px 0;">
+    <div class="container">
+      <div class="repos-grid" id="reposGrid">
+        <div class="projects-loading">
+          <div class="loading-spinner"></div>
+          <span>Fetching live repositories...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING BANNER ============ -->
+  <section class="github-footer-banner" style="padding: 80px 0; background: var(--bg-2); border-top: 1px solid var(--border);">
+    <div class="container" style="text-align: center; max-width: 800px; display: flex; flex-direction: column; align-items: center; gap: 28px;">
+      <p style="font-size: 1.15rem; color: var(--text-2); line-height: 1.8; margin: 0;">
+        These are the projects and works posted by <strong class="accent">Aman Minz</strong> on GitHub. 
+        You can visit his official profile to explore more repositories, contribute, or follow his development journey.
+      </p>
+      <a href="https://github.com/AmanMInz-in" target="_blank" class="btn btn-primary" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px; margin-right: 8px;"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        Visit My GitHub Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">AM<span class="accent">.</span></span>
+        <span class="footer-copy">© 2025 Aman Minz. Crafted with precision.</span>
+        <span class="footer-stack">GitHub API · HTML · CSS · JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="repos.js"></script>
+</body>
+</html>

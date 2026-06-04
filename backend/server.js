@@ -60,12 +60,12 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Centralized Event Management Tool',
+    title: 'EventIQ - Event Management System',
     description:
-      'A college-wide event management platform with three-tier RBAC (Admin, Club Associate, Student). Enables clubs to publish events, manage registrations, and post notices. Won 1st place at SYMPHONIA Hackathon.',
+      'A centralized event coordination platform with three-tier RBAC (Admin, Club Associate, Student). Provides administrators with campus-wide oversight and club associates with dedicated dashboards to publish, manage, and coordinate student registrations and notices.',
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'RBAC', 'Nodemailer'],
-    liveUrl:   process.env.EVENT_LIVE_URL   || 'https://college-events.vercel.app',
-    githubUrl: process.env.EVENT_GITHUB_URL || 'https://github.com/amanminz/event-management',
+    liveUrl:   process.env.EVENT_LIVE_URL   || 'https://central-event-management-system.vercel.app/',
+    githubUrl: process.env.EVENT_GITHUB_URL || 'https://github.com/AmanMInz-in/Central-Event-Management-System',
   },
   {
     id: 3,
@@ -78,10 +78,10 @@ const projects = [
   },
   {
     id: 4,
-    title: 'AI-Powered Study Assistant',
+    title: 'Tanjiro.CV - AI Resume Generator',
     description:
-      'An intelligent study companion that generates personalized quizzes from uploaded notes, summarizes complex material, and tracks learning progress. Features a conversational UI with adaptive difficulty.',
-    tech: ['React.js', 'Node.js', 'OpenAI API', 'MongoDB', 'Socket.io'],
+      'A Gemini-integrated AI resume generator and optimizer. It analyzes job descriptions to tailor, format, and optimize candidate resumes with real-time AI suggestions for maximum ATS scoring.',
+    tech: ['React.js', 'Node.js', 'Gemini API', 'MongoDB', 'Tailwind CSS'],
     liveUrl:   '#',
     githubUrl: '#',
   },

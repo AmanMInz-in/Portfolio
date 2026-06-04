@@ -204,12 +204,12 @@ const staticProjects = [
   },
   {
     id: 2,
-    title: 'Centralized Event Management Tool For Colleges',
-    description: 'A full-featured college event management platform with multi-role authentication (Admin, Club Associate, Student). Enables clubs to publish events, manage registrations, and broadcast notices campus-wide.',
+    title: 'EventIQ - Event Management System',
+    description: 'A centralized event coordination platform featuring multi-role authentication. It provides administrators with complete campus oversight, and club associates with dedicated dashboards to publish, manage, and coordinate student registrations and notices.',
     tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'RBAC'],
     liveUrl: 'https://central-event-management-system.vercel.app/',
     githubUrl: 'https://github.com/AmanMInz-in/Central-Event-Management-System',
-    imageUrl: 'assets/central 02.png',
+    imageUrl: 'assets/central 01.png',
   },
   {
     id: 3,
@@ -222,9 +222,9 @@ const staticProjects = [
   },
   {
     id: 4,
-    title: 'AI-Powered Study Assistant',
-    description: 'An intelligent study companion leveraging AI to generate personalized quizzes, summarize study material, and track progress over time. Built with a clean conversational UI and adaptive learning features.',
-    tech: ['React.js', 'Node.js', 'OpenAI API', 'MongoDB', 'Socket.io'],
+    title: 'Tanjiro.CV - AI Resume Generator',
+    description: 'A Gemini-integrated AI resume generator and optimizer. It analyzes job descriptions to tailor, format, and optimize candidate resumes with real-time AI suggestions for maximum ATS scoring.',
+    tech: ['React.js', 'Node.js', 'Gemini API', 'MongoDB', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
     imageUrl: 'https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1200&q=80',
@@ -399,3 +399,22 @@ hero && document.addEventListener('mousemove', (e) => {
   hero.style.setProperty('--px', `${x}px`);
   hero.style.setProperty('--py', `${y}px`);
 });
+
+/* =====================================================
+   THEME TOGGLE (Light/Dark Mode)
+   ===================================================== */
+const themeToggleBtn = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+const initialTheme = savedTheme || 'dark';
+
+// Set initial theme
+document.documentElement.setAttribute('data-theme', initialTheme);
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
