@@ -1374,6 +1374,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-cta-row { justify-content: center; }
   .hero-stats { justify-content: center; }
   .hero-social { justify-content: center; }
+  .hero-name {
+    white-space: normal;
+    font-size: clamp(2.2rem, 10vw, 4.5rem);
+    line-height: 1.1;
+  }
+  .stat {
+    align-items: center;
+    text-align: center;
+  }
 
   .section { padding: 80px 0; }
   .container { padding: 0 20px; }
