@@ -227,8 +227,26 @@ const staticProjects = [
     tech: ['React.js', 'Node.js', 'Gemini API', 'MongoDB', 'Tailwind CSS'],
     liveUrl: '#',
     githubUrl: '#',
-    imageUrl: 'https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: 'assets/tangiro.png',
   },
+  {
+    id: 5,
+    title: 'WDID AI - Reasoning agent',
+    description: 'A Gemini-integrated AI resume generator and optimizer. It analyzes job descriptions to tailor, format, and optimize candidate resumes with real-time AI suggestions for maximum ATS scoring.',
+    tech: ['React.js', 'Node.js', 'Gemini API', 'MongoDB', 'Tailwind CSS'],
+    liveUrl: 'https://wdid-ai.vercel.app/',
+    githubUrl: 'https://github.com/AmanMInz-in/WDID-AI',
+    imageUrl: 'assets/wdid.png',
+  },
+
+
+
+
+
+
+
+
+
 ];
 
 async function loadProjects() {
